@@ -1,0 +1,143 @@
+/* Base body with elegant parchment background */
+body {
+  font-family: 'Cinzel', serif;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat, #f9f4e7;
+  color: #3b2e1e;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Centered layout */
+main {
+  position: relative;
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 248, 230, 0.85);
+  box-shadow: 0 0 20px rgba(60, 30, 10, 0.2);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+/* Hogwarts watermark behind content */
+main::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background: url('https://upload.wikimedia.org/wikipedia/en/4/44/Hogwartscrest.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.04;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #5a2a0c;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Paragraphs */
+p {
+  text-align: justify;
+  position: relative;
+  z-index: 1;
+}
+
+/* Links */
+a {
+  color: #7a1e0d;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+a:hover {
+  color: #5a2a0c;
+  text-decoration: underline;
+}
+
+/* Book list */
+ul#ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul#ul li {
+  background: rgba(224, 211, 184, 0.8);
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+ul#ul li:hover {
+  background: rgba(214, 196, 163, 0.9);
+  transform: scale(1.02);
+}
+
+/* Images */
+img {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 250px;
+  border: 4px solid #7a1e0d; /* dark red border */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(122, 30, 13, 0.6); /* soft glow */
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+img:hover {
+  box-shadow: 0 0 30px rgba(122, 30, 13, 0.9); /* stronger glow on hover */
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6e5846;
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #c0a97a;
+  position: relative;
+  z-index: 1;
+}
+
+footer + a {
+  display: block;
+  text-align: center;
+  margin: 20px 0;
+  z-index: 1;
+  position: relative;
+}
+
+/* Divider line */
+hr {
+  margin: 40px 0;
+  border: none;
+  height: 1px;
+  background-color: #c0a97a;
+}
