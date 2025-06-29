@@ -11,9 +11,10 @@ body {
 /* Centered layout */
 main {
   position: relative;
+  width: 90%;
   max-width: 960px;
-  margin: 40px auto;
-  padding: 30px;
+  margin: 5vw auto;
+  padding: 5vw;
   background: rgba(255, 248, 230, 0.85);
   box-shadow: 0 0 20px rgba(60, 30, 10, 0.2);
   border-radius: 12px;
@@ -26,8 +27,10 @@ main::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 500px;
+  width: 60vw;
+  max-width: 500px;
+  height: 60vw;
+  max-height: 500px;
   background: url('https://upload.wikimedia.org/wikipedia/en/4/44/Hogwartscrest.png') no-repeat center center;
   background-size: contain;
   opacity: 0.04;
@@ -45,18 +48,18 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
-  margin-top: 30px;
+  margin-top: 2rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
 
 /* Paragraphs */
@@ -64,6 +67,7 @@ p {
   text-align: justify;
   position: relative;
   z-index: 1;
+  font-size: 1rem;
 }
 
 /* Links */
@@ -87,8 +91,8 @@ ul#ul {
 
 ul#ul li {
   background: rgba(224, 211, 184, 0.8);
-  margin: 10px 0;
-  padding: 12px;
+  margin: 0.8rem 0;
+  padding: 1rem;
   border-radius: 10px;
   transition: background 0.3s, transform 0.2s;
 }
@@ -101,17 +105,43 @@ ul#ul li:hover {
 /* Images */
 img {
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 5vh auto;
+  width: 100%;
   max-width: 250px;
-  border: 4px solid #7a1e0d; /* dark red border */
+  border: 4px solid #7a1e0d;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(122, 30, 13, 0.6); /* soft glow */
+  box-shadow: 0 0 20px rgba(122, 30, 13, 0.6);
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
 img:hover {
-  box-shadow: 0 0 30px rgba(122, 30, 13, 0.9); /* stronger glow on hover */
+  box-shadow: 0 0 30px rgba(122, 30, 13, 0.9);
   transform: scale(1.02);
+}
+
+.profile-pic {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 15px rgba(80, 140, 255, 1),
+      0 0 30px rgba(40, 60, 100, 0.8),
+      0 0 45px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(80, 140, 255, 1),
+      0 0 40px rgba(40, 60, 100, 1),
+      0 0 60px rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    box-shadow:
+      0 0 15px rgba(80, 140, 255, 1),
+      0 0 30px rgba(40, 60, 100, 0.8),
+      0 0 45px rgba(0, 0, 0, 0.6);
+  }
 }
 
 /* Footer */
@@ -119,8 +149,8 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   color: #6e5846;
-  margin-top: 40px;
-  padding-top: 10px;
+  margin-top: 3rem;
+  padding-top: 1rem;
   border-top: 1px solid #c0a97a;
   position: relative;
   z-index: 1;
@@ -129,15 +159,54 @@ footer {
 footer + a {
   display: block;
   text-align: center;
-  margin: 20px 0;
+  margin: 1.5rem 0;
   z-index: 1;
   position: relative;
 }
 
 /* Divider line */
 hr {
-  margin: 40px 0;
+  margin: 3rem 0;
   border: none;
   height: 1px;
   background-color: #c0a97a;
 }
+
+/* -------- Responsive Typography -------- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p, ul#ul li {
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding: 6vw 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  main::before {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  main {
+    padding: 8vw 5vw;
+  }
+}
+
