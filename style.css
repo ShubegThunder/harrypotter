@@ -1,8 +1,4 @@
-/* Base body with elegant parchment background */
-/* This will primarily affect Firefox, offering very limited styling. */
-/* Webkit browsers will NOT pick up advanced styling from this selector for scrollbars. */
 * {
-  /* Firefox scrollbar styling */
   scrollbar-width: thin; /* 'auto', 'thin', or 'none' */
   scrollbar-color: #5a2e00 #fdf5e6; /* thumb-color track-color (Dark wood thumb, parchment track) */
 
